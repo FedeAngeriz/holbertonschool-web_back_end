@@ -1,22 +1,13 @@
 function updateUniqueItems(items) {
-  if (!Array.isArray(items)) {
-    throw new Error('Invalid input');
+  if (!(map instanceof Map)) {
+    throw new Error('Cannot process');
   }
 
-  const uniqueItems = new Set();
-  const duplicates = new Set();
-
-  for (const item of items) {
-    if (uniqueItems.has(item)) {
-      duplicates.add(item);
-    } else {
-      uniqueItems.add(item);
+  for (const [key, value] of map.entries()) {
+    if (value === 1) {
+      map.set(key, 100);
     }
   }
 
-  for (const item of duplicates) {
-    uniqueItems.delete(item);
-  }
-
-  return Array.from(uniqueItems);
+  return map;
 }

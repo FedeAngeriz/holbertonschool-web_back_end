@@ -1,12 +1,10 @@
 function cleanSet(set, startString) {
-  const result = [];
-  if (typeof startString !== 'string' || startString.length === 0) {
+  if (typeof startString !== 'string' || !startString) {
     return '';
   }
-  for (const item of set) {
-    if (item && item.startsWith(startString)) {
-      result.push(item.slice(startString.length));
-    }
-  }
-  return result.join('-');
+  const filtered = Array.from(set)
+  .filter(value => value.startsWith(startString))
+  .map(value => value.slice(startString.length));
+
+  return filtered.join('-');
 }
