@@ -1,13 +1,13 @@
 export default function updateUniqueItems(items) {
-  if (!(map instanceof Map)) {
+  if (!(items instanceof Map)) {
     throw new Error('Cannot process');
   }
 
   for (const [key, value] of map.entries()) {
     if (value === 1) {
-      map.set(key, 100);
+      items.set(key, 100);
     }
   }
 
-  return map;
+  return items;
 }
