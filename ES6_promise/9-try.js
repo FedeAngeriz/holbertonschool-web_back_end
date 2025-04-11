@@ -1,4 +1,4 @@
-export default function guardrail(fn) {
+export default function guardrail(mathFunction) {
   const queue = [];
   try {
     const result = mathFunction();
