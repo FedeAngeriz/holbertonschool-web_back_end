@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from typing import List
 """Define list sum function with type float and return their sum as a float."""
+from typing import List
 
 
 
