@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def make_multiplier(multiplier: float) -> callable:
     """Create a function that multiplies a number by a given multiplier.
 
