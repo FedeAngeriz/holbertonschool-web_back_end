@@ -53,7 +53,6 @@ class Server:
                 break
             data.append(dataset[index_next])
             index_next += 1
-        
         next_index = index_next
 
         return {
