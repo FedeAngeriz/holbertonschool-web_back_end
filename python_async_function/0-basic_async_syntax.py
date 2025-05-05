@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
+""" Function async argument wait 10 seconds the returns it """
 import asyncio
 import random
-""" Function async argument wait 10 seconds the returns it """
 
 
 async def wait_random(max_delay: int = 10) -> float:
