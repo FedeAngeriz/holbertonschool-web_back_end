@@ -8,22 +8,22 @@ function countStudents(path) {
     let totalStudents = 0;
     const fields = {};
 
-    for (let i = 0; i < lineas.length; i++) {
+    for (let i = 0; i < lineas.length; i += 1) {
       const linea = lineas[i].trim();
 
-      if (linea === '') continue;
+      if (i === 0) {
 
-      if (i === 0) continue;
+      } else if (linea !== '') {
+        const parts = linea.split(',');
+        const firstname = parts[0];
+        const field = parts[parts.length - 1];
 
-      const parts = linea.split(',');
-      const firstname = parts[0];
-      const field = parts[parts.length - 1];
-
-      if (!fields[field]) {
-        fields[field] = [];
+        if (!fields[field]) {
+          fields[field] = [];
+        }
+        fields[field].push(firstname);
+        totalStudents++;
       }
-      fields[field].push(firstname);
-      totalStudents++;
     }
 
     console.log(`Number of students: ${totalStudents}`);
@@ -31,7 +31,6 @@ function countStudents(path) {
       const list = fields[field].join(', ');
       console.log(`Number of students in ${field}: ${fields[field].length}. List: ${list}`);
     }
-
   } catch (error) {
     throw new Error('Cannot load the database');
   }
