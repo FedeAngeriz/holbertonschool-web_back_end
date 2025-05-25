@@ -13,11 +13,11 @@ function countStudents(path) {
 
       if (i === 0) {
 
-      } else if (linea >= 4) {
+      } else if (linea.length >= 4) {
         const parts = linea.split(',');
         const firstname = parts[0];
         const field = parts[3];
-        
+
         if (!fields[field]) {
           fields[field] = [];
         }
