@@ -11,16 +11,21 @@ function countStudents(path) {
     for (let i = 0; i < lineas.length; i += 1) {
       const linea = lineas[i].trim();
 
-      if (linea.length >= 4) {
-        const parts = linea.split(',');
-        const firstname = parts[0];
-        const field = parts[3];
+      if (i === 0) continue;
 
-        if (!fields[field]) {
-          fields[field] = [];
+      if (linea) {
+        const parts = linea.split(',');
+
+        if ( parts.length >= 4) {
+          const firstname = parts[0];
+          const field = parts[3];
+
+          if (!fields[field]) {
+            fields[field] = [];
+          }
+          fields[field].push(firstname);
+          totalStudents += 1;
         }
-        fields[field].push(firstname);
-        totalStudents += 1;
       }
     }
 
