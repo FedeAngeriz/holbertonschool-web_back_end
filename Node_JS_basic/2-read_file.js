@@ -11,22 +11,20 @@ function countStudents(path) {
     for (let i = 0; i < lineas.length; i += 1) {
       const linea = lineas[i].trim();
 
-      if (i === 0) continue;
-
-      if (linea) {
+      if (i !== 0 && linea) {
         const parts = linea.split(',');
 
-        if ( parts.length >= 4) {
-          const firstname = parts[0];
-          const field = parts[3];
+          if (parts.length >= 4) {
+            const firstname = parts[0];
+            const field = parts[3];
 
-          if (!fields[field]) {
-            fields[field] = [];
+            if (!fields[field]) {
+              fields[field] = [];
+            }
+            fields[field].push(firstname);
+            totalStudents += 1;
           }
-          fields[field].push(firstname);
-          totalStudents += 1;
         }
-      }
     }
 
     console.log(`Number of students: ${totalStudents}`);
