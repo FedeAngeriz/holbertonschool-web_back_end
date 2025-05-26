@@ -13,10 +13,10 @@ const app = http.createServer(async (req, res) => {
     res.statusCode = 200;
     res.write('This is the list of our students\n');
     try {
-      const result = await countStudents(DataBase);
-      res.end(result);
+      const studentList = await countStudents(DB);
+      res.end(`This is the list of our students\n${studentList}`);
     } catch (err) {
-      res.end(err.message);
+      res.end(`This is the list of our students\n${err.message}`);
     }
   } else {
     res.statusCode = 404;
