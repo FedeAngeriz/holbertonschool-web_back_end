@@ -1,3 +1,5 @@
+const { resourceLimits } = require('worker_threads');
+
 const fs = require('fs').promises;
 
 async function countStudents(path) {
@@ -32,6 +34,7 @@ async function countStudents(path) {
         console.log(`Number of students in ${field}: ${fields[field].length}. List: ${list}`);
       }
     }
+    return result;
   } catch (error) {
     throw new Error('Cannot load the database');
   }
